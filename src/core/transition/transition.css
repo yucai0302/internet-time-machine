@@ -1,0 +1,61 @@
+/* TimeTravelTransition 舞台外壳动画（由 App 挂到当前舞台容器上） */
+
+.itm-stage {
+  transform-origin: 50% 50%;
+}
+
+/* Phase2 空间坍缩：0.5s 延迟（与转场状态机同步）后，
+   旧页面故障抖动、色彩分离，随即向中心坍缩被吸入时空入口 */
+.itm-stage.itm-travelling {
+  animation: itm-collapse 0.7s cubic-bezier(0.66, -0.2, 0.8, 0.3) 0.5s forwards;
+}
+
+@keyframes itm-collapse {
+  0% {
+    transform: scale(1);
+    filter: none;
+    opacity: 1;
+  }
+  10% {
+    transform: scale(1.015) translateX(5px);
+    filter: saturate(1.6) brightness(1.15);
+  }
+  14% {
+    transform: scale(1.005) translateX(-7px) skewX(0.8deg);
+    filter: saturate(2.1) hue-rotate(-16deg) brightness(1.25);
+  }
+  20% {
+    transform: scale(0.995) translateX(4px) skewX(-0.5deg);
+    filter: saturate(1.5) hue-rotate(12deg);
+  }
+  32% {
+    transform: scale(0.97);
+    filter: saturate(1.4) brightness(1.05);
+  }
+  100% {
+    transform: scale(0.02);
+    filter: blur(12px) saturate(1.8) brightness(0.45);
+    opacity: 0;
+  }
+}
+
+/* Phase5 落地：目标时代页面由模糊光晕中显影，与转场层淡出重叠，无闪烁 */
+.itm-stage.itm-landing {
+  animation: itm-land 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes itm-land {
+  0% {
+    transform: scale(1.06);
+    filter: blur(16px) brightness(1.7) saturate(1.35);
+    opacity: 0;
+  }
+  55% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    filter: blur(0) brightness(1) saturate(1);
+    opacity: 1;
+  }
+}

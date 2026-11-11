@@ -1,0 +1,211 @@
+/* =====================================================================
+   2010 · iPhone 4 硬件层 —— 金属边框 / 黑色玻璃面板 / 实体按键
+   机身 350×666，屏幕 316×474（2:3），额头/下巴各 96px 上下对称，纯 CSS 绘制
+   ===================================================================== */
+
+.era10-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  overflow: hidden;
+  user-select: none;
+  background:
+    radial-gradient(1000px 520px at 50% -10%, rgba(140, 190, 225, 0.14), transparent 70%),
+    radial-gradient(1400px 800px at 50% 120%, rgba(8, 16, 26, 0.92), transparent 75%),
+    linear-gradient(180deg, #0d141c 0%, #18242f 50%, #0a0f15 100%);
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Microsoft YaHei', sans-serif;
+}
+
+.era10-exit {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 20;
+  padding: 5px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(159, 212, 232, 0.4);
+  background: linear-gradient(180deg, rgba(210, 236, 250, 0.2), rgba(60, 100, 130, 0.25));
+  color: #cfe8f5;
+  font-size: 12px;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+.era10-exit:hover { background: linear-gradient(180deg, rgba(220, 244, 255, 0.32), rgba(80, 130, 165, 0.3)); }
+
+.era10-caption {
+  color: rgba(150, 200, 230, 0.5);
+  font-size: 11px;
+  letter-spacing: 4px;
+  flex: none;
+}
+
+/* 手机整体缩放容器 */
+.ip4-scale { flex: none; display: flex; }
+
+/* ---------- 机身：不锈钢边框 + 黑色玻璃面板 ---------- */
+.ip4 {
+  position: relative;
+  width: 350px;
+  height: 666px;
+  flex: none;
+  border-radius: 44px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0) 8%, rgba(255, 255, 255, 0) 90%, rgba(0, 0, 0, 0.38)),
+    linear-gradient(90deg,
+      #2f343a 0%, #aeb6bf 3.5%, #eef2f5 9%, #8f97a1 26%, #565d66 50%,
+      #8f97a1 74%, #eef2f5 91%, #aeb6bf 96.5%, #2f343a 100%);
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.55),
+    0 22px 55px rgba(0, 0, 0, 0.6),
+    0 70px 130px rgba(0, 0, 0, 0.42),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.55);
+}
+/* 天线断点（iPhone 4 标志性的边框缝隙）：四角各一条 */
+.ip4::before,
+.ip4::after {
+  content: '';
+  position: absolute;
+  left: -1px;
+  width: 3px;
+  height: 13px;
+  border-radius: 2px;
+  background: rgba(8, 10, 12, 0.85);
+}
+.ip4::before { top: 32px; box-shadow: 349px 0 0 rgba(8, 10, 12, 0.85); }
+.ip4::after { bottom: 32px; box-shadow: 349px 0 0 rgba(8, 10, 12, 0.85); }
+
+/* 正面黑色玻璃面板 */
+.ip4-front {
+  position: absolute;
+  inset: 7px;
+  border-radius: 38px;
+  overflow: hidden;
+  background:
+    radial-gradient(140% 70% at 18% -6%, rgba(255, 255, 255, 0.09), transparent 42%),
+    linear-gradient(118deg, transparent 44%, rgba(255, 255, 255, 0.05) 50%, transparent 56%),
+    #060708;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.95), inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+/* 听筒 / 前置摄像头 / 距离感应器 */
+.ip4-ear {
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 58px;
+  height: 7px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #101215, #262a2f 60%, #0a0c0e);
+  box-shadow: inset 0 1px 2px #000, 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+.ip4-ear::after {
+  content: '';
+  position: absolute;
+  inset: 1px 3px;
+  border-radius: 3px;
+  background: repeating-linear-gradient(90deg, #000 0 2px, #1a1e22 2px 4px);
+  opacity: 0.8;
+}
+.ip4-cam {
+  position: absolute;
+  top: 43px;
+  left: calc(50% + 55px);
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 34%, #3d6c94, #0a1420 55%, #04070c 75%);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.6), 0 0 0 3px rgba(255, 255, 255, 0.07), inset 0 0 2px #000;
+}
+.ip4-sensor {
+  position: absolute;
+  top: 44px;
+  left: calc(50% - 68px);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, #262c33, #05070a 70%);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.08);
+}
+
+/* 屏幕（316×474，2:3），额头 96px */
+.ip4-screen {
+  position: absolute;
+  top: 96px;
+  left: 17px;
+  width: 316px;
+  height: 474px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #000;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.9),
+    0 0 0 2px rgba(255, 255, 255, 0.05),
+    inset 0 0 14px rgba(0, 0, 0, 0.7);
+}
+/* 玻璃斜向高光（不拦截点击） */
+.ip4-glare {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  background: linear-gradient(118deg,
+    rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.04) 24%,
+    transparent 42%, transparent 78%, rgba(255, 255, 255, 0.05) 100%);
+}
+
+/* 圆形实体 Home 键 */
+.ip4-home {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 120;
+  background: radial-gradient(circle at 50% 30%, #3a4046, #191c20 62%, #0e1013);
+  box-shadow:
+    inset 0 2px 3px rgba(255, 255, 255, 0.16),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.85),
+    0 1px 1px rgba(255, 255, 255, 0.18),
+    0 -1px 2px rgba(0, 0, 0, 0.6);
+}
+.ip4-home span {
+  display: block;
+  width: 19px;
+  height: 19px;
+  border: 2px solid rgba(255, 255, 255, 0.32);
+  border-radius: 6px;
+  margin: auto;
+}
+.ip4-home:active {
+  transform: translateX(-50%) scale(0.97);
+  box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.9), 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+/* 侧面实体按键：电源（顶部）/ 静音拨杆 / 音量键（左侧） */
+.ip4-key {
+  position: absolute;
+  z-index: 120;
+  background: linear-gradient(180deg, #e7ebef, #9aa1aa);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+.ip4-key.power { top: -3px; right: 62px; width: 56px; height: 4px; border-radius: 3px 3px 0 0; }
+.ip4-key.mute { left: -3px; top: 148px; width: 4px; height: 26px; border-radius: 3px 0 0 3px; background: linear-gradient(90deg, #e7ebef, #8f959e); }
+.ip4-key.mute::after { content: ''; position: absolute; right: -1px; top: 9px; width: 2px; height: 8px; border-radius: 1px; background: #e2841a; box-shadow: 0 0 2px rgba(0,0,0,.4); }
+.ip4-key.volu { left: -3px; top: 196px; width: 5px; height: 30px; border-radius: 3px 0 0 3px; background: linear-gradient(90deg, #e7ebef, #8f959e); }
+.ip4-key.vold { left: -3px; top: 234px; width: 5px; height: 30px; border-radius: 3px 0 0 3px; background: linear-gradient(90deg, #e7ebef, #8f959e); }
+
+/* 熄屏 */
+.off4 { position: absolute; inset: 0; z-index: 90; background: #000; }

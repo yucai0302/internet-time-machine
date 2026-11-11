@@ -1,0 +1,281 @@
+/* ===== 2000 年代专属主题 —— GeoCities 个人主页视觉语言，禁止与现代 UI 混用 ===== */
+
+/* 应用外壳字体：Win2000 风格小字 */
+.y2k-font {
+  font-family: Tahoma, 'MS Sans Serif', 'Microsoft YaHei', sans-serif;
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+/* 网页正文字体：Comic Sans（当年个人主页标配） */
+.pg {
+  font-family: 'Comic Sans MS', 'Comic Sans', 'Microsoft YaHei', cursive;
+  font-size: 15px;
+}
+.pg a,
+.pg .pglink {
+  color: var(--pg-link, #0000ee);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.pg a:visited,
+.pg .pglink:visited {
+  color: var(--pg-link, #0000ee);
+}
+
+/* ---- Win2000 立体边框 ---- */
+.bev-out {
+  background: #d4d0c8;
+  box-shadow: inset -1px -1px #404040, inset 1px 1px #ffffff,
+    inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+}
+.bev-in {
+  box-shadow: inset -1px -1px #ffffff, inset 1px 1px #404040,
+    inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+}
+.bev-thin-in {
+  box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080;
+}
+.bev-btn {
+  background: #d4d0c8;
+  box-shadow: inset -1px -1px #404040, inset 1px 1px #ffffff,
+    inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+}
+.bev-btn:active {
+  box-shadow: inset -1px -1px #ffffff, inset 1px 1px #404040,
+    inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+  padding-top: 1px;
+  padding-left: 1px;
+}
+
+/* Win2000 标题栏：深藏青 → 淡钢蓝 */
+.titlebar2k {
+  background: linear-gradient(90deg, #0a246a, #a6caf0);
+}
+
+/* ---- 编辑器分组框（经典 groupbox） ---- */
+.gb2k {
+  position: relative;
+  margin-top: 12px;
+  padding: 14px 10px 10px;
+  border: 1px solid #808080;
+  box-shadow: 1px 1px 0 #fff;
+  background: #d4d0c8;
+}
+.gb2k > .gb2k-title {
+  position: absolute;
+  top: -8px;
+  left: 8px;
+  padding: 0 5px;
+  background: #d4d0c8;
+  font-weight: bold;
+  color: #0a246a;
+}
+.inp2k {
+  background: #fff;
+  box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080,
+    inset -2px -2px #dfdfdf, inset 2px 2px #404040;
+  padding: 3px 5px;
+  font-family: Tahoma, 'MS Sans Serif', 'Microsoft YaHei', sans-serif;
+  font-size: 11px;
+  outline: none;
+  border: none;
+}
+
+/* ---- 闪烁 / 跑马灯（个人主页灵魂特效） ---- */
+@keyframes blink2k {
+  50% { opacity: 0; }
+}
+.blink2k {
+  animation: blink2k 1s steps(1) infinite;
+}
+@keyframes marquee2k {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+.marquee2k {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee2k 11s linear infinite;
+}
+
+/* ---- 网页可选背景（纯 CSS 生成，可平铺） ---- */
+.bg2k-stars {
+  background-color: #000;
+  background-image: radial-gradient(#fff 1px, transparent 1.4px),
+    radial-gradient(#9cf 1px, transparent 1.4px);
+  background-size: 110px 110px, 70px 70px;
+  background-position: 0 0, 30px 40px;
+}
+.bg2k-clouds {
+  background-color: #99ccff;
+  background-image: radial-gradient(ellipse 60px 22px at 30px 40px, #fff 45%, transparent 46%),
+    radial-gradient(ellipse 80px 26px at 120px 80px, #fff 45%, transparent 46%);
+  background-size: 190px 130px;
+}
+.bg2k-tiles {
+  background-color: #336699;
+  background-image: linear-gradient(#224466 1px, transparent 1px),
+    linear-gradient(90deg, #224466 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.bg2k-sunset {
+  background: linear-gradient(180deg, #3a1c71 0%, #d76d77 55%, #ffaf7b 100%);
+}
+.bg2k-tiedye {
+  background: conic-gradient(from 30deg, #ff0080, #ff8c00, #ffee00, #00c853, #2979ff, #aa00ff, #ff0080);
+}
+.bg2k-plain {
+  background: #fff;
+}
+
+/* ---- 访客计数器：黑底绿字 LCD 风 ---- */
+.counter2k {
+  display: inline-block;
+  background: #000;
+  color: #7fff00;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  letter-spacing: 3px;
+  padding: 3px 8px;
+  border: 2px inset #808080;
+  text-shadow: 0 0 6px #7fff00;
+}
+
+/* ---- 模拟 GIF：旋转地球 ---- */
+@keyframes globe-spin {
+  from { background-position: 0 0; }
+  to { background-position: 17px 0; }
+}
+.gif-globe {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 2px solid #003399;
+  overflow: hidden;
+  background: radial-gradient(circle at 35% 35%, #7ec8ff, #1560c0 72%);
+}
+.gif-globe::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(90deg, transparent 0 7px, rgba(0, 128, 64, 0.55) 7px 10px);
+  animation: globe-spin 1.4s linear infinite;
+}
+
+/* ---- 模拟 GIF：跳舞火焰 ---- */
+@keyframes flame-a {
+  0%, 100% { transform: scaleY(1) rotate(-3deg); }
+  50% { transform: scaleY(1.25) rotate(3deg); }
+}
+@keyframes flame-b {
+  0%, 100% { transform: scaleY(1.2) rotate(4deg); }
+  50% { transform: scaleY(0.9) rotate(-4deg); }
+}
+.gif-flame {
+  position: relative;
+  width: 26px;
+  height: 40px;
+}
+.gif-flame i {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  border-radius: 50% 50% 46% 46% / 62% 62% 38% 38%;
+}
+.gif-flame i:nth-child(1) {
+  width: 22px;
+  height: 34px;
+  margin-left: -11px;
+  background: radial-gradient(circle at 50% 75%, #ffd24d 18%, #ff8c00 55%, #e63b0c 100%);
+  animation: flame-a 0.55s ease-in-out infinite;
+}
+.gif-flame i:nth-child(2) {
+  width: 12px;
+  height: 20px;
+  margin-left: -6px;
+  background: radial-gradient(circle at 50% 80%, #fff6a0 20%, #ffbf2e 70%, transparent 100%);
+  animation: flame-b 0.4s ease-in-out infinite;
+}
+
+/* ---- 模拟 GIF：NEW! 爆炸星 ---- */
+@keyframes burst-spin {
+  to { transform: rotate(360deg); }
+}
+.gif-new {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  animation: burst-spin 3.2s linear infinite;
+}
+.gif-new span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-360deg);
+  animation: burst-spin 3.2s linear infinite reverse;
+  font-family: Impact, 'Arial Black', sans-serif;
+  font-size: 13px;
+  color: #d40000;
+}
+
+/* ---- 彩虹分隔条 ---- */
+@keyframes rainbow-slide {
+  from { background-position: 0 0; }
+  to { background-position: 112px 0; }
+}
+.divider2k {
+  height: 10px;
+  border: 1px solid #333;
+  background: linear-gradient(90deg, #ff004c, #ff8c00, #ffee00, #00c853, #2979ff, #aa00ff, #ff004c);
+  background-size: 112px 100%;
+  animation: rainbow-slide 1.2s linear infinite;
+}
+
+/* ---- Under Construction 警戒条纹 ---- */
+@keyframes stripes-slide {
+  from { background-position: 0 0; }
+  to { background-position: 39.6px 0; }
+}
+.uc2k-stripes {
+  background: repeating-linear-gradient(45deg, #111 0 14px, #ffd800 14px 28px);
+  animation: stripes-slide 1s linear infinite;
+}
+
+/* ---- 模拟 GIF：飘浮 MIDI 音符 ---- */
+@keyframes note-float {
+  0% { transform: translateY(0); opacity: 0; }
+  25% { opacity: 1; }
+  100% { transform: translateY(-30px); opacity: 0; }
+}
+.gif-notes {
+  position: relative;
+  width: 56px;
+  height: 44px;
+}
+.gif-notes i {
+  position: absolute;
+  font-style: normal;
+  font-size: 18px;
+  animation: note-float 2.6s ease-in-out infinite;
+}
+.gif-notes i:nth-child(1) { left: 4px; color: #cc00ff; animation-delay: 0s; }
+.gif-notes i:nth-child(2) { left: 24px; color: #ff6600; animation-delay: 0.9s; }
+.gif-notes i:nth-child(3) { left: 40px; color: #0099ff; animation-delay: 1.7s; }
+
+@keyframes spin2k {
+  to { transform: rotate(360deg); }
+}
+.spin2k {
+  animation: spin2k 2.4s linear infinite;
+}
+@keyframes bounce2k {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.bounce2k {
+  animation: bounce2k 0.9s ease-in-out infinite;
+}

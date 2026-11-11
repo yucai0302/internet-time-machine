@@ -1,0 +1,135 @@
+/* ===== 1995 年代专属主题 —— Win95 视觉语言，禁止与现代 UI 混用 ===== */
+
+/* 系统字体：小字号像素感 */
+.w95-font {
+  font-family: 'MS Sans Serif', 'Tahoma', 'Microsoft YaHei', Arial, sans-serif;
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+/* 立体凸起边框（窗口/按钮外框） */
+.bevel-out {
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff,
+    inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+}
+/* 立体凹陷边框（输入框/内容区） */
+.bevel-in {
+  box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a,
+    inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+}
+/* 薄凹陷（状态格） */
+.bevel-thin-in {
+  box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080;
+}
+
+/* 95 风格按钮 */
+.btn95 {
+  background: #c0c0c0;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff,
+    inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+}
+.btn95:active,
+.btn95.pressed {
+  box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a,
+    inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+  padding-top: 1px;
+  padding-left: 1px;
+}
+
+/* 深蓝渐变标题栏 */
+.titlebar95 {
+  background: linear-gradient(90deg, #000080, #1084d0);
+}
+
+/* ===== CRT 显示器质感 ===== */
+.crt-scanlines {
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.16) 0px,
+    rgba(0, 0, 0, 0.16) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+.crt-vignette {
+  background: radial-gradient(ellipse at center, transparent 58%, rgba(0, 0, 0, 0.38) 100%);
+}
+@keyframes crt-flicker {
+  0%, 100% { opacity: 0.06; }
+  8% { opacity: 0.02; }
+  9% { opacity: 0.08; }
+  42% { opacity: 0.04; }
+  43% { opacity: 0.09; }
+  76% { opacity: 0.03; }
+}
+.crt-flicker {
+  background: white;
+  animation: crt-flicker 3.5s infinite;
+  pointer-events: none;
+}
+@keyframes crt-band {
+  from { top: -15%; }
+  to { top: 110%; }
+}
+.crt-band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 12%;
+  background: linear-gradient(transparent, rgba(255, 255, 255, 0.028), transparent);
+  animation: crt-band 7s linear infinite;
+  pointer-events: none;
+}
+
+/* ===== 90 年代网页元素 ===== */
+@keyframes blink95 {
+  50% { opacity: 0; }
+}
+.blink95 {
+  animation: blink95 1s steps(1) infinite;
+}
+@keyframes marquee95 {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+.marquee95 {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee95 12s linear infinite;
+}
+@keyframes wave-flag {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+.wave95 {
+  animation: wave-flag 1s ease-in-out infinite;
+}
+
+/* 1995 网页正文：Times 衬线、蓝色下划线链接 */
+.page95 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  color: #000;
+  background: #fff;
+}
+.page95 a,
+.page95 .link95 {
+  color: #0000ee;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.page95 a:visited,
+.page95 .link95:visited {
+  color: #551a8b;
+}
+
+/* 网页里模拟的低分辨率图片块 */
+.pixelated {
+  image-rendering: pixelated;
+}
+
+/* 桌面图标选中态 */
+.icon95.selected {
+  outline: 1px dotted #fff;
+  background: rgba(0, 0, 128, 0.45);
+}

@@ -1,0 +1,160 @@
+/* ================================================
+   六个时代背景场景动画 —— 按年代命名空间 sc95/sc00/sc05/sc10/sc20/sc26
+   ================================================ */
+
+/* ---------- 共享 ---------- */
+@keyframes sc-drift {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+@keyframes sc-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.15; }
+}
+
+/* ---------- 1995 CRT / 拨号 ---------- */
+@keyframes sc95-scanline {
+  0% { transform: translateY(-12vh); opacity: 0; }
+  8% { opacity: 1; }
+  92% { opacity: 1; }
+  100% { transform: translateY(105vh); opacity: 0; }
+}
+@keyframes sc95-flicker {
+  0%, 100% { opacity: 0.05; }
+  30% { opacity: 0.09; }
+  55% { opacity: 0.04; }
+  80% { opacity: 0.1; }
+}
+@keyframes sc95-type {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes sc95-caret { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+@keyframes sc95-wave {
+  0%, 100% { transform: scaleY(0.25); }
+  50% { transform: scaleY(1); }
+}
+@keyframes sc95-glitch {
+  0%, 93%, 100% { transform: translateX(0); opacity: 1; }
+  94% { transform: translateX(-6px); opacity: 0.7; }
+  96% { transform: translateX(5px); }
+  98% { transform: translateX(-2px); opacity: 0.9; }
+}
+.sc95-scanbar {
+  animation: sc95-scanline 7s linear infinite;
+}
+.sc95-noise {
+  animation: sc95-flicker 0.9s steps(4) infinite;
+}
+.sc95-line {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: sc95-type 2.6s steps(34) forwards;
+}
+.sc95-caret { animation: sc95-caret 0.9s steps(1) infinite; }
+.sc95-bar { transform-origin: bottom; animation: sc95-wave 1.1s ease-in-out infinite; }
+.sc95-term { animation: sc95-glitch 9s linear infinite; }
+
+/* ---------- 2000 个人主页 ---------- */
+@keyframes sc00-float {
+  0%, 100% { transform: translateY(0) rotate(var(--tilt, 0deg)); }
+  50% { transform: translateY(-18px) rotate(var(--tilt, 0deg)); }
+}
+@keyframes sc00-twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.25); }
+}
+@keyframes sc00-marquee {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+@keyframes sc00-stripes {
+  from { background-position: 0 0; }
+  to { background-position: 56px 0; }
+}
+.sc00-float { animation: sc00-float var(--dur, 9s) ease-in-out infinite; }
+.sc00-star { animation: sc00-twinkle var(--dur, 2.4s) ease-in-out infinite; }
+.sc00-marquee { animation: sc00-marquee 12s linear infinite; }
+.sc00-stripes {
+  background-image: repeating-linear-gradient(45deg, #f5c542 0 14px, #1b1024 14px 28px);
+  background-size: 56px 100%;
+  animation: sc00-stripes 1.6s linear infinite;
+}
+
+/* ---------- 2005 社交 ---------- */
+@keyframes sc05-bubble {
+  0% { transform: translateY(30px) scale(0.85); opacity: 0; }
+  14% { transform: translateY(0) scale(1); opacity: 1; }
+  82% { opacity: 1; }
+  100% { transform: translateY(-56px); opacity: 0; }
+}
+@keyframes sc05-node {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.18); }
+}
+@keyframes sc05-dash {
+  to { stroke-dashoffset: -36; }
+}
+.sc05-bubble { animation: sc05-bubble var(--dur, 7s) ease-in-out infinite; }
+.sc05-node { animation: sc05-node 3.2s ease-in-out infinite; }
+.sc05-link { stroke-dasharray: 6 6; animation: sc05-dash 2.4s linear infinite; }
+
+/* ---------- 2010 移动 ---------- */
+@keyframes sc10-ripple {
+  0% { transform: scale(0.2); opacity: 0.55; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+@keyframes sc10-notch {
+  0% { transform: translateY(-80px); opacity: 0; }
+  12%, 70% { transform: translateY(0); opacity: 1; }
+  86%, 100% { transform: translateY(-80px); opacity: 0; }
+}
+@keyframes sc10-iconbob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+.sc10-ripple { animation: sc10-ripple 4.5s ease-out infinite; }
+.sc10-notch { animation: sc10-notch 8s ease-in-out infinite; }
+.sc10-icon { animation: sc10-iconbob var(--dur, 5s) ease-in-out infinite; }
+
+/* ---------- 2020 算法 ---------- */
+@keyframes sc20-feed {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+@keyframes sc20-particle {
+  0% { transform: translate(0, 0); opacity: 0; }
+  10%, 80% { opacity: 0.8; }
+  100% { transform: translate(var(--dx, 40px), var(--dy, -320px)); opacity: 0; }
+}
+@keyframes sc20-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.3); opacity: 1; }
+}
+.sc20-feed { animation: sc20-feed var(--dur, 26s) linear infinite; }
+.sc20-particle { animation: sc20-particle var(--dur, 5s) linear infinite; }
+.sc20-pulse { animation: sc20-pulse 1.6s ease-in-out infinite; }
+
+/* ---------- 2026 AI ---------- */
+@keyframes sc26-ring {
+  0% { transform: scale(0.6); opacity: 0.6; }
+  100% { transform: scale(2.1); opacity: 0; }
+}
+@keyframes sc26-halo {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.75; }
+}
+.sc26-ring { animation: sc26-ring 3.4s ease-out infinite; }
+.sc26-halo { animation: sc26-halo 5s ease-in-out infinite; }
+
+/* ---------- Reduced motion：全部静止 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .sc95-scanbar, .sc95-noise, .sc95-line, .sc95-caret, .sc95-bar, .sc95-term,
+  .sc00-float, .sc00-star, .sc00-marquee, .sc00-stripes,
+  .sc05-bubble, .sc05-node, .sc05-link,
+  .sc10-ripple, .sc10-notch, .sc10-icon,
+  .sc20-feed, .sc20-particle, .sc20-pulse,
+  .sc26-ring, .sc26-halo {
+    animation: none !important;
+  }
+}

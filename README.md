@@ -8,6 +8,10 @@
 
 年代之间不是简单跳转，而是一段五阶段的「时空隧道」转场：旧世界坍缩、粒子隧道加速、新世界显影落地，全程无白屏。
 
+## 在线体验
+
+https://yucai0302.github.io/internet-time-machine/
+
 ## 预览
 
 ![桌面端](docs/screenshots/desktop.png)
@@ -74,6 +78,10 @@ MIT
 A time machine for the internet, running entirely in the browser. Drag the timeline to travel through six eras — 1995, 2000, 2005, 2010, 2020 and 2026 — each rendered as a complete, interactive period interface: a Windows 95 desktop with dial-up networking, a millennium-era personal homepage builder, forums and social profiles, an iPhone 4 running iOS 4, an algorithm-driven short-video feed, and a multi-agent AI workspace.
 
 Eras are connected by a five-stage time-tunnel transition: the old world collapses, particles accelerate through the tunnel, and the new world develops and settles — with no white flash in between.
+
+## Live demo
+
+https://yucai0302.github.io/internet-time-machine/
 
 ## Preview
 

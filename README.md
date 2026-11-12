@@ -14,9 +14,9 @@ https://yucai0302.github.io/internet-time-machine/
 
 ## 演示视频
 
-一段 4 分 39 秒的完整操作录像，覆盖六个年代的真实交互（拖动时间轴、拨号上网、个人主页留言、论坛发帖、iPhone 4 解锁与 App、短视频刷流与发布、多 Agent 任务执行与交付）：
+一段 4 分 40 秒的完整操作录像（含各年代程序化合成音效），覆盖六个年代的真实交互（拖动时间轴、拨号上网、个人主页留言、论坛发帖、iPhone 4 解锁与 App、短视频刷流与发布、多 Agent 任务执行与交付）：
 
-[docs/internet-time-machine-demo.mp4](docs/internet-time-machine-demo.mp4)（1440×900 · 26 MB）
+[docs/internet-time-machine-demo.mp4](docs/internet-time-machine-demo.mp4)（1440×900 · 立体声 · 22 MB）
 
 ## 预览
 
@@ -91,9 +91,9 @@ https://yucai0302.github.io/internet-time-machine/
 
 ## Demo video
 
-A 4:39 walkthrough recording covering the real interactions of all six eras — dragging the timeline, dial-up networking, signing the guestbook, posting on the forum, unlocking the iPhone 4 and its apps, swiping and publishing short videos, and running a multi-agent task end to end:
+A 4:40 walkthrough recording with the era-specific synthesized sound effects, covering the real interactions of all six eras — dragging the timeline, dial-up networking, signing the guestbook, posting on the forum, unlocking the iPhone 4 and its apps, swiping and publishing short videos, and running a multi-agent task end to end:
 
-[docs/internet-time-machine-demo.mp4](docs/internet-time-machine-demo.mp4) (1440×900 · 26 MB)
+[docs/internet-time-machine-demo.mp4](docs/internet-time-machine-demo.mp4) (1440×900 · stereo · 22 MB)
 
 ## Preview
 

@@ -47,7 +47,10 @@ export function usePhoneState() {
   const threadsRef = useRef(threads)
   threadsRef.current = threads
 
-  useEffect(() => () => { alive.current = false }, [])
+  useEffect(() => {
+    alive.current = true
+    return () => { alive.current = false }
+  }, [])
 
   useEffect(() => { savePersisted({ threads, posts, settings }) }, [threads, posts, settings])
 
